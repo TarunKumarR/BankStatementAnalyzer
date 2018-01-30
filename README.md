@@ -32,7 +32,7 @@ BankStatementAnalyzer --> To instantiate this class, following parameters are ma
 
 Once you have all the above date ready, just by executing statements similar to following, you can get your monthly savings saved to file "testoutput/monthlytally.csv" and transcations split monthly into testoutput/ folder.
 
-You can view the output of this test data in [link] (https://github.com/TarunKumarR/BankStatementAnalyzer/tree/master/testoutput)
+You can view the output of this test data in (https://github.com/TarunKumarR/BankStatementAnalyzer/tree/master/testoutput)
 
 ```
 creditacct = BankStatementAnalyzer("testData/creditcard/", "credit", {"Posted Date": "posted_date",
