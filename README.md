@@ -15,7 +15,7 @@ pip install pandas
 pip install BankStatementAnalyzer
 
 
-# Demo
+## Demo
 Consider that you have 3 bank accounts, credit card, checking and saving account, you can do the following to easily check how much you saved on each month.
 
 For this demo, the test data present in this location is used : [link](https://github.com/TarunKumarR/BankStatementAnalyzer/tree/master/testData)
@@ -23,24 +23,16 @@ For this demo, the test data present in this location is used : [link](https://g
 The BankStatementAnalyzer function needs the following parameters as input during it's creation.
 
 BankStatementAnalyzer --> To instantiate this class, following parameters are mandatory:
-    statementfolder ---> Local file system folder where your bank statements are present. The folder can contain
-                        multiple files. All the files should have same header and the first line of the file should be the header.
-                        File can be of .csv or .txt or any plain text file extension.
-    statementname --> A name for this Bank statement. Example values., creditcard, debit, savingaccount
-    columnmap --> User needs to provide the following column mapping for the following 3 columns of your csv as these are the important
-                    columns in a bank statement and it will be used to analyze the data.
-                    Consider your Bank statement contains these 3 columns in header
-                    Posted Date, Payee, Amount
-                    then, you need to provide the following json as columnmap
-                    {"Posted Date": "posted_date", "Payee": "payee",  "Amount": "amount"}
-    dateformat --> This the format in which the posted_date column data will have data
-    outputfolder --> This is the folder where the analyzed monthly splitup will be saved by the program. The user running the python script should have access to this folder and the folder should have been already present.
+1. statementfolder ---> Local file system folder where your bank statements are present. The folder can contain multiple files. All the files should have same header and the first line of the file should be the header. File can be of .csv or .txt or any plain text file extension.
+1. statementname --> A name for this Bank statement. Example values., creditcard, debit, savingaccount
+1. columnmap --> User needs to provide the following column mapping for the following 3 columns of your csv as these are the important columns in a bank statement and it will be used to analyze the data.  Consider your Bank statement contains these 3 columns in header Posted Date, Payee, Amount then, you need to provide the following json as columnmap  {"Posted Date": "posted_date", "Payee": "payee",  "Amount": "amount"}  
+1. dateformat --> This the format in which the posted_date column data will have data  
+1. outputfolder --> This is the folder where the analyzed monthly splitup will be saved by the program. The user running the python script should have access to this folder and the folder should have been already present.
 
 
+Once you have all the above date ready, just by executing statements similar to following, you can get your monthly savings saved to file "testoutput/monthlytally.csv" and transcations split monthly into testoutput/ folder.
 
-Just by getting the following statements, you can get your monthly savings saved to file "testoutput/monthlytally.csv" and transcations split monthly into testoutput/ folder.
-
-
+You can view the output of this test data in [link] (https://github.com/TarunKumarR/BankStatementAnalyzer/tree/master/testoutput)
 
 ```
 creditacct = BankStatementAnalyzer("testData/creditcard/", "credit", {"Posted Date": "posted_date",
